@@ -17,7 +17,7 @@ public class Main {
         try {
             userAnswer = scan.nextInt();
             if (result.equals(userAnswer)) {
-                System.out.println("Bien joué tu as trouvé la bonne réponse !");
+                System.out.println("Bien joué tu as trouvé la bonne réponse.");
             } else {
                 System.out.println("Pas bien joué, tu es nul !");
             }
