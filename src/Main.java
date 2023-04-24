@@ -1,17 +1,29 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Entrée with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome !");
+        Random random = new Random();
+        int number1 = random.nextInt(10);
+        int number2 = random.nextInt(10);
+        Integer result = number1 * number2;
+        Integer userAnswer;
 
-        // Press Maj+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("Le résultat de " + number1 + " x " + number2 + " est ?");
 
-            // Press Maj+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        Scanner scan = new Scanner(System.in);
+
+        try {
+            userAnswer = scan.nextInt();
+            if (result.equals(userAnswer)) {
+                System.out.println("Bien joué tu as trouvé la bonne réponse !");
+            } else {
+                System.out.println("Pas bien joué, tu es nul !");
+            }
+            main(args);
+        } catch (InputMismatchException exception) {
+            System.exit(0);
         }
     }
 }
